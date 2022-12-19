@@ -567,5 +567,127 @@
       "comentario": "UNA PURA OBRA MAESTRA. Un anillo para gobernar los a todos",
       "puntaje": 5
     }
+  ],
+  "directores": [
+    {
+      "id_director": 1,
+      "director": "Lana Wachowsky",
+      "imagen_director": "https://es.web.img3.acsta.net/pictures/16/03/09/16/29/317444.jpg"
+    },
+    {
+      "id_director": 2,
+      "director": "Ridley Scott",
+      "imagen_director": "https://tinyurl.com/488cfvxz"
+    },
+    {
+      "id_director": 3,
+      "director": "Denis Villeneuve",
+      "imagen_director": "https://as01.epimg.net/meristation/imagenes/2021/10/08/reportajes/1633686951_651369_1633688394_noticia_normal.jpg"
+    },
+    {
+      "id_director": 4,
+      "director": "Frank Darabont",
+      "imagen_director": "https://i.blogs.es/a3e219/frankdarabont/450_1000.jpg"
+    },
+    {
+      "id_director": 5,
+      "director": "Francis Ford Coppola",
+      "imagen_director": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRwL8DnxVBEpmLcRFRuzUKA1qp9YolQMEUKiRqmQkAk3dR2CBq-EQ1IPAJ8cuIq"
+    },
+    {
+      "id_director": 6,
+      "director": "Steven Spielberg",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Steven_Spielberg_by_Gage_Skidmore.jpg/270px-Steven_Spielberg_by_Gage_Skidmore.jpg"
+    },
+    {
+      "id_director": 7,
+      "director": "Makoto Shinkai",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Makoto_Shinkhai_in_Moscow.JPG/250px-Makoto_Shinkhai_in_Moscow.JPG"
+    },
+    {
+      "id_director": 8,
+      "director": "Hayao Miyazaki",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Hayao_Miyazaki.jpg"
+    },
+    {
+      "id_director": 9,
+      "director": "Bong Joon-ho",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Bong_Joon-ho_Deauville_2013.jpg/220px-Bong_Joon-ho_Deauville_2013.jpg"
+    },
+    {
+      "id_director": 10,
+      "director": "Christopher Nolan",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/9/95/Christopher_Nolan_Cannes_2018.jpg"
+    },
+    {
+      "id_director": 11,
+      "director": "Quentin Tarantino",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Quentin_Tarantino_by_Gage_Skidmore.jpg/220px-Quentin_Tarantino_by_Gage_Skidmore.jpg"
+    },
+    {
+      "id_director": 12,
+      "director": "Jon Watts",
+      "imagen_director": "https://i0.wp.com/chevere.life/wp-content/uploads/2022/01/jon-watts.jpg?fit=768%2C573&ssl=1"
+    },
+    {
+      "id_director": 13,
+      "director": "Matt Reeves",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Matt_Reeves_by_Gage_Skidmore.jpg/250px-Matt_Reeves_by_Gage_Skidmore.jpg"
+    },
+    {
+      "id_director": 14,
+      "director": "Domee Shi",
+      "imagen_director": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_280x437/public/media/image/2022/02/domee-shi-lindsey-collins-red-pixar-2626305.jpg?itok=bl6HPdN_"
+    },
+    {
+      "id_director": 15,
+      "director": "Matthew Vaughn",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Matthew_Vaughn_%2848017198166%29_CROPPED.jpg/275px-Matthew_Vaughn_%2848017198166%29_CROPPED.jpg"
+    },
+    {
+      "id_director": 16,
+      "director": "Matt Bettinelli Olpin",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Matt_Bettinelli-Olpin.JPG/220px-Matt_Bettinelli-Olpin.JPG"
+    },
+    {
+      "id_director": 17,
+      "director": "Guillermo Del Toro",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Guillermo_del_Toro_in_2017.jpg/220px-Guillermo_del_Toro_in_2017.jpg"
+    },
+    {
+      "id_director": 18,
+      "director": "Byron Howard",
+      "imagen_director": "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQsLpHMllox0Owi6IjEDSgEmT6-Gaj2uH0ejKfsr2MIFHsLN85cCQnELOyPukHb"
+    },
+    {
+      "id_director": 19,
+      "director": "Ruben Fleischer",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Ruben_Fleischer_by_Gage_Skidmore.jpg/220px-Ruben_Fleischer_by_Gage_Skidmore.jpg"
+    },
+    {
+      "id_director": 20,
+      "director": "Chloé Zhao",
+      "imagen_director": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Chloezhao.jpg/220px-Chloezhao.jpg"
+    },
+    {
+      "id_director": 21,
+      "director": "Joe Wright",
+      "imagen_director": "https://es.web.img3.acsta.net/pictures/17/09/13/14/52/4956018.jpg"
+    },
+    {
+      "id_director": 22,
+      "director": "Peter Ramsey",
+      "imagen_director": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcT5jyJfVOBF9-N00qH4AtKzotC7Ir051t7ZrlU0_7gqGfMX83-N-o0faFDDLogU"
+    },
+    {
+      "id_director": 23,
+      "director": "Irvin Kershner",
+      "imagen_director": "https://static.wikia.nocookie.net/esstarwars/images/1/14/Kershner.jpg/revision/latest/top-crop/width/360/height/450?cb=20101228155539"
+    },
+    {
+      "id_director": 24,
+      "director": "Peter Jackson",
+      "imagen_director": "https://www.elnacional.cat/enblau/uploads/s1/17/23/69/44/peter-jackson-podria-dirigir-world-of-warcraft_2_302x302.jpeg"
+    }     
   ]
-}  
+}

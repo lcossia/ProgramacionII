@@ -201,3 +201,88 @@ def recalcular_promedio(id_pelicula):
     if len(puntajes) == 0:
         return sum(puntajes)    
     return round(sum(puntajes) / len(puntajes), 1)
+
+# Devuelve peliculas con portada
+@app.route("/api/pelicula_portada", methods=['GET'])
+def retornar_peliculas_con_portada():
+    if usuario_privado == True:
+        portadas = [peli for peli in db["peliculas"] if len(peli["imagen"]) > 0]
+        print("Se mostraron las peliculas con portadas")
+        return jsonify(portadas), HTTPStatus.OK
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+
+# Borra una pelicula por ID - Pelicula 28 no tiene comentarios
+@app.route("/api/peliculas", methods=['DELETE'])
+def borrar_pelicula():
+    if usuario_privado == True:
+        # recibir datos por parte del cliente
+        data = request.get_json()
+        hay_comentarios= False
+        for coment in db["comentarios"]:
+            if coment["id_pelicula"] == data["id_pelicula"]:
+                hay_comentarios=True
+                
+        if hay_comentarios == True:
+            return jsonify("MAMA! Saca la mano de ahí carajo.(by el comandante Ricardo Fort) Hay comentarios de otros!"), HTTPStatus.BAD_REQUEST
+        else:
+            db["peliculas"] = [peli for peli in db["peliculas"] if peli["id"] != (int(data["id_pelicula"]))]
+            return jsonify("Se borró la película"), HTTPStatus.OK
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+        
+# Devuelve listado de directores
+@app.route("/api/directores", methods=['GET'])
+def retornar_directores():
+    if usuario_privado == True:
+        return jsonify(db["directores"])
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+
+# Carga un comentario nuevo
+@app.route("/api/comentarios", methods=['POST'])
+def cargar_comentario():
+    if usuario_privado == True:
+        data = request.get_json()
+        campos = {"id_usuario", "id_pelicula", "comentario", "puntaje"}
+        if data.keys() < campos:
+            return jsonify("Faltan campos"), HTTPStatus.BAD_REQUEST
+    
+        comentario_nuevo = {
+            "id_usuario": data["id_usuario"],
+            "id_pelicula": data["id_pelicula"],
+            "comentario": data["comentario"],
+            "puntaje": data["puntaje"]
+        }
+        db["comentarios"].append(comentario_nuevo)
+        return jsonify(comentario_nuevo), HTTPStatus.OK
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+
+# Devuelve listado de comentarios
+@app.route("/api/comentarios", methods=['GET'])
+def todos_los_comentarios():
+    if usuario_privado == True:
+        return jsonify(db["comentarios"]), HTTPStatus.OK
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+
+# Devuelve comentarios de las peliculas por ID de usuario
+@app.route("/api/comentarios/<peli>/<user>", methods=['GET'])
+def comentario_owner(peli, user):
+    if usuario_privado == True:
+        [comentario] = [coment for coment in db["comentarios"] if int(coment["id_usuario"]) == int(user) and int(coment["id_pelicula"]) == int(peli)]
+        return jsonify(comentario), HTTPStatus.OK
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+
+# Devuelve peliculas por genero
+@app.route("/api/generos", methods=['GET'])
+def obtener_generos():
+    if usuario_privado == True:
+        return jsonify(db["generos"]), HTTPStatus.OK
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+
+if __name__=="__main__":
+    app.run(debug=True)
