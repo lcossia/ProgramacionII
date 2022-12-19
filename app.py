@@ -90,3 +90,114 @@ def retornar_todas_peliculas():
         return jsonify(peliculas)
     else:
         return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+        
+# Devuelve peliculas por ID o Titulo
+@app.route("/api/peliculas/<data>", methods=['GET'])
+def retornar_pelicula(data):
+    if usuario_privado == True:
+        # Devuelve pelicula por ID
+        if data.isnumeric():
+            peliculas = db["peliculas"]
+            for pelicula in peliculas:
+                if pelicula["id"] == int(data):
+                    return jsonify(pelicula), HTTPStatus.OK
+        # Devuelve pelicula por titulo
+        else:
+            pelicula = existe_pelicula(data)
+            if pelicula:
+                return jsonify(pelicula), HTTPStatus.OK
+            return jsonify("El titulo no existe"), HTTPStatus.NOT_FOUND
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+
+# Funcion interna no flask
+def existe_pelicula(titulo):
+    peliculas = db["peliculas"]
+    for pelicula in peliculas:
+        if pelicula['titulo'].lower() == titulo.lower():
+            return pelicula
+    return False
+
+# Carga una pelicula nueva
+@app.route("/api/peliculas", methods=['POST'])
+def alta_pelicula():
+    if usuario_privado == True:
+        # recibir datos por parte del cliente
+        data = request.get_json()
+        # validar data que viene del pedido
+        # data.keys() >= {"usuario", "titulo"} retorna true si hay coincidencia
+
+        campos = {"titulo", "anio", "genero", "genero_sub", "id_director", "sinopsis", "imagen", "trailer", "subidapor", "puntaje", "comentario"}
+        if data.keys() < campos:
+            return jsonify("Faltan campos en el pedido"), HTTPStatus.BAD_REQUEST
+
+        if existe_pelicula(data["titulo"]):
+            return jsonify("La pelicula ya existe en la base de datos."), HTTPStatus.BAD_REQUEST
+        
+        next_peli_id = int(db["peliculas"][-1]["id"]) + 1
+        comentario_nuevo = {
+            "id_usuario": data["subidapor"],
+            "id_pelicula": next_peli_id,
+            "comentario": data["comentario"],
+            "puntaje": data["puntaje"]
+        }
+        db["comentarios"].append(comentario_nuevo)
+
+        pelicula_nueva = {
+            "id": next_peli_id,
+            "titulo": data["titulo"],
+            "anio": data["anio"],
+            "genero": data["genero"],
+            "genero_sub": data["genero_sub"],
+            "id_director": data["id_director"],
+            "sinopsis": data["sinopsis"],
+            "imagen": data["imagen"],
+            "trailer": data["trailer"],
+            "subidapor": data["subidapor"],
+            "promedio": data["puntaje"]
+        }
+        db["peliculas"].append(pelicula_nueva)
+        print("Se cargo una pelicula nueva")
+        return jsonify(pelicula_nueva), HTTPStatus.OK
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+
+# Modifica una pelicula por ID
+@app.route("/api/peliculas/<int:id>", methods=['PUT'])
+def modificar_pelicula(id):
+    if usuario_privado == True:
+        encontrado = False
+        data = request.get_json()
+        for peli in db["peliculas"]:
+            if peli["id"] == int(id):
+                encontrado = True
+                id_pelicula = peli["id"]
+                promedio = recalcular_promedio(id_pelicula)
+                
+                peli["id"]= int(id)                                           
+                peli["titulo"]= data["titulo"]
+                peli["anio"]= int(data["anio"])
+                peli["genero"]= data["genero"]
+                peli["genero_sub"]= data["genero_sub"]
+                peli["id_director"]= int(data["id_director"])
+                peli["sinopsis"]= data["sinopsis"]
+                peli["imagen"]=data["imagen"]
+                peli[ "trailer"]= data["trailer"]
+                peli["promedio"]= promedio
+                peli["subidapor"]= int(data["subidapor"])
+                
+        if encontrado == True:
+            print("Se modificaron datos de la pelicula")
+            return jsonify("Se actualizaron los datos de la pelicula"), HTTPStatus.OK
+        else:
+            print("No se modificaron datos")
+            return jsonify("No se actualizaron los datos de la película"), HTTPStatus.NOT_FOUND
+    else:
+        return jsonify("Usted no es un usuario registrado"), HTTPStatus.BAD_REQUEST
+
+# Funcion interna no flask
+def recalcular_promedio(id_pelicula):
+    puntajes = [coment["puntaje"] for coment in db["comentarios"] if coment["id_pelicula"] == int(id_pelicula)]
+    if len(puntajes) == 0:
+        return sum(puntajes)    
+    return round(sum(puntajes) / len(puntajes), 1)

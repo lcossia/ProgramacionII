@@ -365,5 +365,207 @@
       "promedio": 5,
       "subidapor": 3
     }
+  ],
+   "usuarios": [
+    {
+      "id": 1,
+      "usuario": "seba",
+      "contrasenia": "seba123",
+      "nombre": "Sebastian Gomez"
+    },
+    {
+      "id": 2,
+      "usuario": "lucho",
+      "contrasenia": "lucho456",
+      "nombre": "Luciano Cossia"
+    },
+    {
+      "id": 3,
+      "usuario": "emi",
+      "contrasenia": "emi789",
+      "nombre": "Emilce Caba"
+    },
+    {
+      "id": 4,
+      "usuario": "mauro",
+      "contrasenia": "mauro012",
+      "nombre": "Mauro Torre"
+    }
+  ],
+  "comentarios": [
+    {
+      "id_usuario": 1,
+      "id_pelicula": 1,
+      "comentario": "Me encantó la película",
+      "puntaje": 5
+    },
+    {
+      "id_usuario": 2,
+      "id_pelicula": 1,
+      "comentario": "Estuvo entretenida",
+      "puntaje": 4
+    },
+    {
+      "id_usuario": 2,
+      "id_pelicula": 2,
+      "comentario": "Amo la ciencia ficción y este me parece un clásico que todo el mundo debe ver",
+      "puntaje": 5
+    },
+    {
+      "id_usuario": 1,
+      "id_pelicula": 3,
+      "comentario": "Me encantó la película! Fue como leer los libros con más efectos especiales.",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 3,
+      "id_usuario": 1,
+      "comentario": "Genial! no lei los libros pero muy buena",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 4,
+      "id_usuario": 1,
+      "comentario": "La madre de las películas de prisión y una que cualquier persona debería ver alguna vez.",
+      "puntaje": 4
+    },
+    {
+      "id_pelicula": 5,
+      "id_usuario": 3,
+      "comentario": "Clasico, clasico, clasico 👏, sin El Padrino no hay GTA",
+      "puntaje": 2
+    },
+    {
+      "id_pelicula": 6,
+      "id_usuario": 4,
+      "comentario": "Me aburrio un poco, pero la fotografia es excelente",
+      "puntaje": 3
+    },
+    {
+      "id_pelicula": 7,
+      "id_usuario": 3,
+      "comentario": "Otra maravilla de Coppola",
+      "puntaje": 2
+    },
+    {
+      "id_pelicula": 8,
+      "id_usuario": 2,
+      "comentario": "Entretenida, no es la historia mas original del cine pero tampoco está mal",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 9,
+      "id_usuario": 1,
+      "comentario": " personalmente no me gusta el anime, asi que cuando me vi la pelicula pensé que era otro anime sin sentido , pero cuando la termine de ver , me pareció BUENA, siendo sincero el OSCAR lo tenia merecido",
+      "puntaje": 4
+    },
+    {
+      "id_pelicula": 10,
+      "id_usuario": 1,
+      "comentario": "Ni Nostradamus o Baba Vanga predijeron tan bien el 2020 como Parasite.",
+      "puntaje": 2
+    },
+    {
+      "id_pelicula": 11,
+      "id_usuario": 3,
+      "comentario": "Todos estamos de aceurdo en lo mismo, el mejor Jocker por lejos, lejisimos, toda de Heath Ledger la pelicula.",
+      "puntaje": 4
+    },
+    {
+      "id_pelicula": 12,
+      "id_usuario": 3,
+      "comentario": "La mejor película de Tarantino sin lugar a dudas con un reparto de lujo para una película de lujo. Contra más veces se ve, más te gusta.",
+      "puntaje": 3
+    },
+    {
+      "id_pelicula": 13,
+      "id_usuario": 4,
+      "comentario": "Muy buena bastante larga pero vale la pena grandisimas actuaciones de los 3 ***Spoiler-Alert*** ",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 14,
+      "id_usuario": 1,
+      "comentario": "Es una de las películas que sin importar la crítica que reciba en el cine con el tiempo se va a volver una de las favoritas del público por su fotografía, trama, música y el giro con el que se maneja al súper héroe.",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 15,
+      "id_usuario": 3,
+      "comentario": "No hay un solo cuadro de esta película que no maximice el potencial de esta historia, su ingenio, humor o encanto. Cada momento cuenta y transforma Turning Red en un festín visual",
+      "puntaje": 4
+    },
+    {
+      "id_pelicula": 16,
+      "id_usuario": 2,
+      "comentario": "el tono por el que va a emplear Vaughn es diferente al de las otras dos películas de la saga.",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 17,
+      "id_usuario": 3,
+      "comentario": "Simple y llanamente la mejor secuela, o debería decir recuela de Scream jajaja.",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 18,
+      "id_usuario": 3,
+      "comentario": "Muy buena, muy entretenida. Me ha encantado. El giro final te hiela la sangre. Un personaje tan tierno y noble como Eli no se merecía eso.",
+      "puntaje": 4
+    },
+    {
+      "id_pelicula": 19,
+      "id_usuario": 2,
+      "comentario": "Visualmente suntuosa, musicalmente bien acompañada, aderezada con la intriga y los juegos mentales propios de las cintas del genero noir",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 20,
+      "id_usuario": 4,
+      "comentario": "Es una hermosa película, muy bien hecha. Un ambiente muy divertido, colorido y cálido. Mucho ritmo y con un gran mensaje para todos!",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 21,
+      "id_usuario": 4,
+      "comentario": "Me gustó, es una historia diferente pero sin duda mejor que Reloaded y Revolutions, comienza muy bien con escenas de acción y que rápidamente te llevan a cuestionarte que demonios esta pasando",
+      "puntaje": 4
+    },
+    {
+      "id_pelicula": 22,
+      "id_usuario": 1,
+      "comentario": "Mala, genérica, sin alma, predecible, no destaca en absolutamente nada, es como una lista de clichés uno detrás de otro de lo que una película típica de aventuras debe tener.",
+      "puntaje": 1
+    },
+    {
+      "id_pelicula": 23,
+      "id_usuario": 2,
+      "comentario": "Es larga y sin fundamento y sólo emocionan los efectos especiales",
+      "puntaje": 2
+    },
+    {
+      "id_pelicula": 24,
+      "id_usuario": 2,
+      "comentario": "Peter Dinklage destaca como lo mejor de un extravagante musical que nunca logra estar a su altura",
+      "puntaje": 2
+    },
+    {
+      "id_pelicula": 25,
+      "id_usuario": 2,
+      "comentario": "Definitivamente una de las mejores peliculas de spiderman que he visto. Artistica y narrativamente es HERMOSA",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 26,
+      "id_usuario": 4,
+      "comentario": "esta es la mejor de la saga, eso no esta a discusión, la accion es fantastica, la batalla de hoth es la mejor en toda la saga, el duelo de luke contra vader, por diooooos",
+      "puntaje": 5
+    },
+    {
+      "id_pelicula": 27,
+      "id_usuario": 4,
+      "comentario": "UNA PURA OBRA MAESTRA. Un anillo para gobernar los a todos",
+      "puntaje": 5
+    }
   ]
-}
+}  
